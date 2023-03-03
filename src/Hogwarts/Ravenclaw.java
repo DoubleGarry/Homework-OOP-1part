@@ -46,7 +46,7 @@ public class Ravenclaw extends Hogwarts {
     public void setCreativity(int creativity) {
         this.creativity = creativity;
     }
-    public int getPoints(){
+    public int fullPoints(){
         int r = 0;
         r += getIntelligence() + getWisdom() + getWit() + getCreativity() + getPoint();
         return r;

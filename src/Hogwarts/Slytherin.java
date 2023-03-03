@@ -56,7 +56,7 @@ public class Slytherin extends Hogwarts {
     public void setLustForPower(int lustForPower) {
         this.lustForPower = lustForPower;
     }
-    public int getPoints(){
+    public int fullPoints(){
         int r = 0;
         r += getCunning() + getDetermination() + getAmbition() + getResourcefulness() + getLustForPower() + getPoint();
         return r;

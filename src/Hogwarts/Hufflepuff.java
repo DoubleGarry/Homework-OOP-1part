@@ -36,7 +36,7 @@ public class Hufflepuff extends Hogwarts {
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
-    public int getPoints(){
+    public int fullPoints(){
         int r = 0;
         r += getDiligence() + getHonesty() + getLoyalty() + getPoint();
         return r;

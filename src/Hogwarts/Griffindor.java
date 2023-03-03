@@ -35,7 +35,7 @@ public class Griffindor extends Hogwarts {
     public void setBravery(int bravery) {
         this.bravery = bravery;
     }
-    public int getPoints(){
+    public int fullPoints(){
         int r = 0;
         r += getHonor() + getBravery() + getNobility() + getPoint();
         return r;

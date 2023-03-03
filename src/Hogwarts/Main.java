@@ -15,13 +15,7 @@ public class Main {
                 new Griffindor("Рон Уизли", random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
-        for (Griffindor griffindor : griffindors) {
-            System.out.println("Студент: " + griffindor.getStudentName() + " - Мощьность колдовства:" + griffindor.getWitchcraft()
-                    + "; трансгрессия:" + griffindor.getTransgression() + "; " + griffindor + " Итого баллов:" + griffindor.getPoints());
-        }
 
-        System.out.println();
-        System.out.println("Пуффендуй");
         Hufflepuff[] hufflepuffs = {
                 new Hufflepuff("Захария Смит", random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101), random.nextInt(101)),
@@ -30,13 +24,7 @@ public class Main {
                 new Hufflepuff("Джастин Финч-Флетчли", random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
-        for (Hufflepuff hufflepuff : hufflepuffs) {
-            System.out.println("Студент: " + hufflepuff.getStudentName() + " - Мощьность колдовства:" + hufflepuff.getWitchcraft()
-                    + "; трансгрессия:" + hufflepuff.getTransgression() + "; " + hufflepuff + " Итого баллов:" + hufflepuff.getPoints());
-        }
 
-        System.out.println();
-        System.out.println("Когтевран");
         Ravenclaw[] ravenclaws = {
                 new Ravenclaw("Чжоу Чанг", random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
@@ -45,13 +33,7 @@ public class Main {
                 new Ravenclaw("Маркус Белби", random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101), random.nextInt(101), random.nextInt(101)),
         };
-        for (Ravenclaw ravenclaw : ravenclaws) {
-            System.out.println("Студент: " + ravenclaw.getStudentName() + " - Мощьность колдовства:" + ravenclaw.getWitchcraft()
-                    + "; трансгрессия:" + ravenclaw.getTransgression() + "; " + ravenclaw + " Итого баллов:" + ravenclaw.getPoints());
-        }
 
-        System.out.println();
-        System.out.println("Слизерин");
         Slytherin[] slytherins = {
                 new Slytherin("Драко Малфой", random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101), random.nextInt(101),
@@ -63,9 +45,11 @@ public class Main {
                         random.nextInt(101), random.nextInt(101), random.nextInt(101),
                         random.nextInt(101), random.nextInt(101)),
         };
-        for (Slytherin slytherin : slytherins) {
-            System.out.println("Студент: " + slytherin.getStudentName() + " - Мощьность колдовства:" + slytherin.getWitchcraft()
-                    + "; трансгрессия:" + slytherin.getTransgression() + "; " + slytherin + " Итого баллов:" + slytherin.getPoints());
-        }
+
+        PrintInfo printInfo = new PrintInfo();
+        printInfo.print(griffindors);
+        printInfo.print(hufflepuffs);
+        printInfo.print(ravenclaws);
+        printInfo.print(slytherins);
     }
 }
