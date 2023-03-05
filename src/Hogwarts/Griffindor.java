@@ -35,22 +35,38 @@ public class Griffindor extends Hogwarts {
     public void setBravery(int bravery) {
         this.bravery = bravery;
     }
-    public int fullPoints(){
-        int r = 0;
-        r += getHonor() + getBravery() + getNobility() + getPoint();
-        return r;
-    }
 
     @Override
     public int getPoint() {
         return super.getPoint();
     }
 
-    @Override
-    public String toString() {
-        return "благородство:" + nobility +
-                "; честь:" + honor +
-                "; храбрость:" + bravery
-                ;
+    private static int fullPoints(Griffindor student) {
+        return student.getNobility() + student.getHonor() + student.getBravery() + student.getPoint();
+    }
+
+    public void printInfo() {
+        System.out.println(
+                "Студент: " + getStudentName() +
+                        " - Мощьность колдовства:" + getWitchcraft() +
+                        "; Tрансгрессия: " + getTransgression() +
+                        "; Благородство: " + nobility +
+                        "; Честь: " + honor +
+                        "; Храбрость: " + bravery +
+                        ";");
+    }
+
+
+    static void findBestStudent(Griffindor firstStudent, Griffindor secondStudent) {
+        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
+            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
+                    + " лучший Грифиндорец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
+        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+            System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
+                    + secondStudent.getStudentName());
+        } else {
+            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
+                    + " лучший Грифиндорец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+        }
     }
 }

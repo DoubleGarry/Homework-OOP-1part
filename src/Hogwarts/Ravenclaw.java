@@ -46,22 +46,37 @@ public class Ravenclaw extends Hogwarts {
     public void setCreativity(int creativity) {
         this.creativity = creativity;
     }
-    public int fullPoints(){
-        int r = 0;
-        r += getIntelligence() + getWisdom() + getWit() + getCreativity() + getPoint();
-        return r;
-    }
 
     @Override
     public int getPoint() {
         return super.getPoint();
     }
 
-    @Override
-    public String toString() {
-        return " ум:" + intelligence +
-                "; мудрость:" + wisdom +
-                "; остроумие:" + wit +
-                "; креативность:" + creativity ;
+    public void printInfo() {
+        System.out.println(
+                "Студент: " + getStudentName() +
+                        " - Мощьность колдовства:" + getWitchcraft() +
+                        "; Tрансгрессия: " + getTransgression() +
+                        "; Ум: " + intelligence +
+                        "; Мудрость: " + wisdom +
+                        "; Остроумие: " + wit +
+                        "; Креативность: " + creativity);
+    }
+    private static int fullPoints(Ravenclaw student) {
+        return student.getIntelligence() + student.getWisdom() + student.getWit() +
+                student.getCreativity() + student.getPoint();
+    }
+
+    static void findBestStudent(Ravenclaw firstStudent, Ravenclaw secondStudent) {
+        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
+            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
+                    + " лучший Когтевранец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
+        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+            System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
+                    + secondStudent.getStudentName());
+        } else {
+            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
+                    + " лучший Когтевранец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+        }
     }
 }

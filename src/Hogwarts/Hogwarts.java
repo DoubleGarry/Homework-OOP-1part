@@ -1,16 +1,12 @@
 package Hogwarts;
 
 public class Hogwarts {
-    private String studentName;
+    private final String studentName;
     private int witchcraft; // колдовство
     private int transgression; // трансгрессия
 
     public String getStudentName() {
         return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
     }
 
     public int getWitchcraft() {

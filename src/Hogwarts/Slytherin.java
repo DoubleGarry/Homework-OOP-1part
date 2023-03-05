@@ -56,23 +56,39 @@ public class Slytherin extends Hogwarts {
     public void setLustForPower(int lustForPower) {
         this.lustForPower = lustForPower;
     }
-    public int fullPoints(){
-        int r = 0;
-        r += getCunning() + getDetermination() + getAmbition() + getResourcefulness() + getLustForPower() + getPoint();
-        return r;
-    }
 
     @Override
     public int getPoint() {
         return super.getPoint();
     }
 
-    @Override
-    public String toString() {
-        return "хитрость:" + cunning +
-                "; решительность:" + determination +
-                "; амбициозность:" + ambition +
-                "; находчивость:" + resourcefulness +
-                "; жажда власти:" + lustForPower ;
+    public void printInfo() {
+        System.out.println(
+                "Студент: " + getStudentName() +
+                        " - Мощьность колдовства:" + getWitchcraft() +
+                        "; Tрансгрессия: " + getTransgression() +
+                        "; Хитрость: " + cunning +
+                        "; Решительность: " + determination +
+                        "; Амбициозность: " + ambition +
+                        "; Находчивость: " + resourcefulness +
+                        "; Жажда власти: " + lustForPower);
+    }
+
+    private static int fullPoints(Slytherin student) {
+        return student.getCunning() + student.getDetermination() + student.getAmbition() +
+                student.getResourcefulness() + student.getLustForPower() + student.getPoint();
+    }
+
+    static void findBestStudent(Slytherin firstStudent, Slytherin secondStudent) {
+        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
+            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
+                    + " лучший Слизаринец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
+        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+            System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
+                    + secondStudent.getStudentName());
+        } else {
+            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
+                    + " лучший Слизаринец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+        }
     }
 }

@@ -36,22 +36,34 @@ public class Hufflepuff extends Hogwarts {
     public void setHonesty(int honesty) {
         this.honesty = honesty;
     }
-    public int fullPoints(){
-        int r = 0;
-        r += getDiligence() + getHonesty() + getLoyalty() + getPoint();
-        return r;
-    }
 
     @Override
     public int getPoint() {
         return super.getPoint();
     }
+    public void printInfo() {
+        System.out.println(
+                "Студент: " + getStudentName() +
+                        " - Мощьность колдовства:" + getWitchcraft() +
+                        "; Tрансгрессия: " + getTransgression() +
+                        "; Усердие: " + diligence +
+                        "; Верность: " + loyalty +
+                        "; Чесность: " + honesty);
+    }
+    private static int fullPoints(Hufflepuff student) {
+        return student.getDiligence() + student.getHonesty() + student.getLoyalty() + student.getPoint();
+    }
 
-    @Override
-    public String toString() {
-        return
-                " усердие:" + diligence +
-                        "; верность:" + loyalty +
-                        "; чесность:" + honesty ;
+    static void findBestStudent(Hufflepuff firstStudent, Hufflepuff secondStudent) {
+        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
+            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
+                    + " лучший Пуффедуец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
+        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+            System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
+                    + secondStudent.getStudentName());
+        } else {
+            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
+                    + " лучший Пуффендуец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+        }
     }
 }
