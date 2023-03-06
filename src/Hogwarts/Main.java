@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
 
-                Griffindor studentHarry = new Griffindor("Гарри Поттер", random.nextInt(101), random.nextInt(101),
+        Griffindor studentHarry = new Griffindor("Гарри Поттер", random.nextInt(101), random.nextInt(101),
                 random.nextInt(101), random.nextInt(101), random.nextInt(101));
         Griffindor studentHermiona = new Griffindor("Гермиона Грейнджер", random.nextInt(101), random.nextInt(101),
                 random.nextInt(101), random.nextInt(101), random.nextInt(101));
@@ -66,5 +66,5 @@ public class Main {
         studentGraham.printInfo();
         studentGregory.printInfo();
         Slytherin.findBestStudent(studentDraco,studentGraham);
-}
+    }
 }

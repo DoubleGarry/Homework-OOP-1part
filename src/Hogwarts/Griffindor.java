@@ -41,8 +41,8 @@ public class Griffindor extends Hogwarts {
         return super.getPoint();
     }
 
-    private static int fullPoints(Griffindor student) {
-        return student.getNobility() + student.getHonor() + student.getBravery() + student.getPoint();
+    private int fullPoints() {
+        return nobility + honor + bravery + this.getPoint();
     }
 
     public void printInfo() {
@@ -58,15 +58,15 @@ public class Griffindor extends Hogwarts {
 
 
     static void findBestStudent(Griffindor firstStudent, Griffindor secondStudent) {
-        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
-            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
-                    + " лучший Грифиндорец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
-        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+        if (firstStudent.fullPoints() > secondStudent.fullPoints()) {
+            System.out.println("Итого очков: " + firstStudent.fullPoints() + " - " + firstStudent.getStudentName()
+                    + " лучший Грифиндорец, чем " + secondStudent.getStudentName() + " - Итого очков: " + secondStudent.fullPoints());
+        } else if (firstStudent.fullPoints() == secondStudent.fullPoints()) {
             System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
                     + secondStudent.getStudentName());
         } else {
-            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
-                    + " лучший Грифиндорец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+            System.out.println("Итого очков: " + secondStudent.fullPoints() + " - " + secondStudent.getStudentName()
+                    + " лучший Грифиндорец, чем " + firstStudent.getStudentName() + " - Итого очков: " + firstStudent.fullPoints());
         }
     }
 }

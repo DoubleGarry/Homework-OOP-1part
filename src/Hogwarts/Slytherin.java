@@ -74,21 +74,21 @@ public class Slytherin extends Hogwarts {
                         "; Жажда власти: " + lustForPower);
     }
 
-    private static int fullPoints(Slytherin student) {
-        return student.getCunning() + student.getDetermination() + student.getAmbition() +
-                student.getResourcefulness() + student.getLustForPower() + student.getPoint();
+    private int fullPoints() {
+        return cunning + determination + ambition +
+                resourcefulness + lustForPower + this.getPoint();
     }
 
     static void findBestStudent(Slytherin firstStudent, Slytherin secondStudent) {
-        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
-            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
-                    + " лучший Слизаринец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
-        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+        if (firstStudent.fullPoints() > secondStudent.fullPoints()) {
+            System.out.println("Итого очков: " + firstStudent.fullPoints() + " - " + firstStudent.getStudentName()
+                    + " лучший Слизаринец, чем " + secondStudent.getStudentName() + " - Итого очков: " + secondStudent.fullPoints());
+        } else if (firstStudent.fullPoints() == secondStudent.fullPoints()) {
             System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
                     + secondStudent.getStudentName());
         } else {
-            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
-                    + " лучший Слизаринец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+            System.out.println("Итого очков: " + secondStudent.fullPoints() + " - " + secondStudent.getStudentName()
+                    + " лучший Слизаринец, чем " + firstStudent.getStudentName() + " - Итого очков: " + firstStudent.fullPoints());
         }
     }
 }

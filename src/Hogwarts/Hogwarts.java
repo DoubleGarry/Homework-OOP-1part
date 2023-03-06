@@ -32,8 +32,6 @@ public class Hogwarts {
 
     }
     public int getPoint(){
-        int p = 0;
-        p += getWitchcraft() + getTransgression();
-        return p;
+        return witchcraft + transgression;
     }
 }

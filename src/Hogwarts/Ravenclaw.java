@@ -62,21 +62,21 @@ public class Ravenclaw extends Hogwarts {
                         "; Остроумие: " + wit +
                         "; Креативность: " + creativity);
     }
-    private static int fullPoints(Ravenclaw student) {
-        return student.getIntelligence() + student.getWisdom() + student.getWit() +
-                student.getCreativity() + student.getPoint();
+    private int fullPoints() {
+        return intelligence + wisdom + wit +
+                creativity + this.getPoint();
     }
 
     static void findBestStudent(Ravenclaw firstStudent, Ravenclaw secondStudent) {
-        if (fullPoints(firstStudent) > fullPoints(secondStudent)) {
-            System.out.println("Итого очков: " + fullPoints(firstStudent) + " - " + firstStudent.getStudentName()
-                    + " лучший Когтевранец, чем " + secondStudent.getStudentName() + " - Итого очков: " + fullPoints(secondStudent));
-        } else if (fullPoints(firstStudent) == fullPoints(secondStudent)) {
+        if (firstStudent.fullPoints() > secondStudent.fullPoints()) {
+            System.out.println("Итого очков: " + firstStudent.fullPoints() + " - " + firstStudent.getStudentName()
+                    + " лучший Когтевранец, чем " + secondStudent.getStudentName() + " - Итого очков: " + secondStudent.fullPoints());
+        } else if (firstStudent.fullPoints() == secondStudent.fullPoints()) {
             System.out.println("Способности " + firstStudent.getStudentName() + " равны способностям "
                     + secondStudent.getStudentName());
         } else {
-            System.out.println("Итого очков: " + fullPoints(secondStudent) + " - " + secondStudent.getStudentName()
-                    + " лучший Когтевранец, чем " + firstStudent.getStudentName() + " - Итого очков: " + fullPoints(firstStudent));
+            System.out.println("Итого очков: " + secondStudent.fullPoints() + " - " + secondStudent.getStudentName()
+                    + " лучший Когтевранец, чем " + firstStudent.getStudentName() + " - Итого очков: " + firstStudent.fullPoints());
         }
     }
 }
